@@ -15,7 +15,8 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+	'firebase'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -32,7 +33,7 @@ angular
       .otherwise({
         redirectTo: '/'
       });
-  }).value('fbURL', 'https://angularifictest.firebaseio.com/')
+  }).value('fbURL', 'https://app-list-diegus.firebaseio.com/')
   .factory('Person', function (fbURL, $firebase) {
     return $firebase(new Firebase(fbURL)).$asArray();
   });
